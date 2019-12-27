@@ -163,3 +163,30 @@ fritzSystem.updateAvailable = async (options) => {
   const rawOverviewInfo = await fritzSystem.getRawOverviewInfo(options)
   return rawOverviewInfo.data.fritzos.isUpdateAvail
 }
+
+// /**
+//  * Get the system event log.
+//  * @param  {Object} options     - FritzBox.js options object.
+//  */
+// fritzSystem.getSystemEventsTest = async (options) => {
+//   if (!options.sid) {
+//     options.sid = await fritzLogin.getSessionId(options)
+//     if (options.sid.error) return options.sid
+//   }
+//
+//   const path = '/data.lua?' +
+//                 'lang=en' +
+//                 '&page=log' +
+//                 '&xhr=1' +
+//                 '&xhrid=all'
+//   const response = await fritzRequest.request(path, 'POST', options)
+//
+//   if (response.error) return response
+//
+//   if (response.body !== '{"done":0}') {
+//     return { error: { message: 'Get system event log failed.', raw: response.body } }
+//   }
+//
+//   return response.body
+//
+// }
